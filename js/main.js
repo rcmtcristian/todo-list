@@ -16,16 +16,10 @@ let todos = [{
 }];
  
 
-render()
 
-function addTodo() {
-  const textbox = document.getElementById('todo-title');
-  const title = textbox.value;
-
-   const datePicker = document.getElementById('date-picker');
-  const dueDate = datePicker.value;
- 
-const id  = new Date().getTime();
+function createTodo(title, dueDate,){
+ /* Creating a new todo item and pushing it into the todos array. */
+const id  =  '' + new Date().getTime();
 
   todos.push({
     title: title,
@@ -33,28 +27,92 @@ const id  = new Date().getTime();
     id: id
 
 
-  })
-render();
- 
-
-  
+  }) 
 }
 
+render()
+
+/* Getting the value of the textbox and assigning it to the title. */
+function addTodo() {
+  const textbox = document.getElementById('todo-title');
+  const title = textbox.value;
+ 
+   /* Getting the value of the date picker and assigning it to the due date. */
+   const datePicker = document.getElementById('date-picker');
+  const dueDate = datePicker.value;
+ 
+
+createTodo(title,dueDate)
+
+render();
+ 
+}
+
+function removeTodo(idToDelete){
+
+todos = todos.filter( function (todo){
+if(todo.id === idToDelete){
+  return false;
+}else{
+  return true
+}
+})
+}
 
 function deleteTodo(e){
   
 const deleteButton = e.target;
 const idToDelete = deleteButton.id
+
+removeTodo(idToDelete)
+
+render()
 }
 
+// checkbox
+function checkTodo(event) {
+  const checkbox = event.target;
+
+  const todoId = checkbox.dataset.todoId;
+  const checked = checkbox.checked;
+
+  toggleTodo(todoId, checked);
+  render();
+}
+
+
+//shows
+/* Clearing the todo list */
 function render(){
   document.getElementById('todo-list').innerHTML = "";
 
+
+  
+/* Creating a div element and adding the text of the todo title and due date to it. */
 todos.forEach(function(todo){
   const element = document.createElement('div');
 element.innerText = todo.title + ' ' + todo.dueDate;
 
+//check box
+const checkbox = document.createElement('input');
+// checkbox.innerHTML = `
 
+
+
+
+// `
+          checkbox.type = 'checkbox';
+          checkbox.onchange = checkTodo;
+          checkbox.dataset.todoId = todo.id;
+          if (todo.isDone === true) {
+            checkbox.checked = true;
+          } else {
+            checkbox.checked = false;
+          }
+          element.prepend(checkbox);
+
+
+/* Creating a new element, adding the todo text to it, and then appending it to the todo list. */
 const deleteButton = document.createElement('button')
 deleteButton.innerText = 'Delete'
 deleteButton.style = 'margin-left: 1rem'
