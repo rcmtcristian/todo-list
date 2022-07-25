@@ -28,7 +28,7 @@ div {
 
 body {
   background: rgb(210, 213, 221);
-  max-width: 70%;
+  max-width: 100%;
   margin: auto;
 }
 #todo-nav{
