@@ -28,6 +28,8 @@ div {
 
 body {
   background: rgb(210, 213, 221);
+  max-width: 80%;
+  margin: auto;
 }
 #todo-nav{
   display: flex;
@@ -179,6 +181,7 @@ button {
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 18px;
+  margin-left: 1em;
 }
 
 button:focus {
@@ -188,8 +191,8 @@ button:focus {
 button:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
-  background-color: rgb(126, 2, 2);
-  box-shadow: rgb(126, 2, 2) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  background-color: rgb(37, 50, 69);
+  box-shadow: rgb(78, 105, 145)0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   color: whitesmoke;
 }
 
@@ -201,7 +204,7 @@ button:active {
 #todo-nav button:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
-  background-color: rgb(81, 95, 79);
+  background-color: Z;
   box-shadow: rgb(81, 95, 79)0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   color: whitesmoke;
 }

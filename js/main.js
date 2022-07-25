@@ -54,9 +54,9 @@ todos = todos.filter( function (todo){
 if(todo.id === idToDelete){
   return false;
 }else{
-  return true
-}
-})
+    return true
+  }
+  })
 }
 
 function deleteTodo(e){
@@ -86,30 +86,25 @@ function checkTodo(event) {
 function render(){
   document.getElementById('todo-list').innerHTML = "";
 
-
-  
 /* Creating a div element and adding the text of the todo title and due date to it. */
 todos.forEach(function(todo){
   const element = document.createElement('div');
 element.innerText = todo.title + ' ' + todo.dueDate;
 
-//check box
+//checkbox
 const checkbox = document.createElement('input');
-// checkbox.innerHTML = `
 
 
-
-
-// `
-          checkbox.type = 'checkbox';
-          checkbox.onchange = checkTodo;
-          checkbox.dataset.todoId = todo.id;
-          if (todo.isDone === true) {
-            checkbox.checked = true;
-          } else {
-            checkbox.checked = false;
-          }
-          element.prepend(checkbox);
+/* The above code is creating a checkbox element and adding it to the DOM. */
+checkbox.type = 'checkbox';
+  checkbox.onchange = checkTodo;
+  checkbox.dataset.todoId = todo.id;
+  if (todo.isDone === true) {
+    checkbox.checked = true;
+  } else {
+    checkbox.checked = false;
+  }
+  element.prepend(checkbox);
 
 
 /* Creating a new element, adding the todo text to it, and then appending it to the todo list. */
@@ -125,27 +120,5 @@ todoList.appendChild(element);
 
 });
 }
-
-// //getting user input//
-// function addTodo() {
-//   let textbox = document.getElementById('todo-title');
-//   let title = textbox.value;
-//   todos.push(title);
-// }
- 
-
-//button//
-/*
-element = document.createElement('button');
-element.innerText = todo4
-document.body.appendChild(element);
-*/
-
-// //changing title*/
-// document.title = 'todo list';
-
-
-// //to add a number to the title//
-// document.title = '(2)' + document.title;
 
 
