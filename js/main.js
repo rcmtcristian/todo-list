@@ -25,8 +25,6 @@ const id  =  '' + new Date().getTime();
     title: title,
     dueDate: dueDate,
     id: id
-
-
   }) 
 }
 
