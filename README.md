@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.imgur.com/PRqDycP.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Todo List</h3>
+<h3 align="center"> <a href="https://rcmtcristian.github.io/todo-list/"> Todo List </a></h3>
 
 ---
 
