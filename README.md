@@ -7,6 +7,6 @@
 
 ---
 
-<p align="center"> Simple todo list that records your time and task
+<p align="center"> Todo list that records your time and task
     <br> 
 </p>
